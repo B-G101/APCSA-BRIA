@@ -69,7 +69,14 @@
   
 
   
-
+      ,"page1": {
+          "title": "Vocab",
+          "content": "",
+          "url": "https://b-g101.github.io/APCSA-BRIA/vocab/",
+          "relUrl": "/vocab/",
+          "date": ""
+      }
+      
   
 
   
@@ -77,6 +84,7 @@
   
 
   
+
   
 
   
@@ -92,7 +100,10 @@
   
 
   
-      ,"page10": {
+  
+
+  
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://b-g101.github.io/APCSA-BRIA/robots.txt",
