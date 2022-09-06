@@ -26,3 +26,7 @@ permalink: /vocab/
 - **Object:** an instance of a class
 - **class:** a programmer-defined blueprint from which objects are created
 - **Parameter:** a variable in the method signature that defines the type of value to receive when the method is called
+- **class header** - consists of the class keyword and the name of the class
+- **method signature** - consists of a name and parameter list
+- **constructor signature** - the first line of the constructor which includes the public keyword, the constructor name, and the values to specify when an object is created
+
