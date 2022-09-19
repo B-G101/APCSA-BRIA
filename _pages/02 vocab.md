@@ -30,3 +30,45 @@ permalink: /vocab/
 - **method signature** - consists of a name and parameter list
 - **constructor signature** - the first line of the constructor which includes the public keyword, the constructor name, and the values to specify when an object is created
 
+## PBL Vocabulary
+**Creativity**
+    - How you approach tasks and solve problems
+    - Looking for both inside and outside of the box solutions 
+    - Conceptualize problems and solution
+    - Make connections and education inferences
+    - Brings together ideas and data
+**Critical thinking**
+    - Solving complex or abstract problems
+    - Discovery of deficiencies that could cause poor results
+    - Thinking about where you might have given wrong or how you can improve the results
+**Communication**
+    - Talking about how you are able to bring their teams together
+    - Verbal skills: how do you address the audience/make them understand
+    - Listening skills: learning and understanding
+    - Writing skills: being able to write in a way that non-experts can understand
+    - Technological communication skills: talking about technical skills in an appropriate manner for your audience
+**Collaboration - Leaders**
+    - Being able to get people on your team on board with the mission/project
+    - Big picture thinking  taking into account other things to make your decision
+    - Delegating/decision making
+    - Time management
+    - Conflict management, teaching and mentoring
+    - Multitasking and initiating new ideas
+**Collaboration - Teamwork**
+    - Trusting people to do their work and that others will produce good work
+    - Accepting responsibility 
+    - Making and implementing decisions
+    - Managing time
+    - Meeting short and long term goals
+    - Organizing 
+    - Meeting deadlines
+**Researching**
+    - Analyzing information and brainstorming solutions
+    - Delineating needs and getting information
+    - Setting goals and problem-solving
+    - Getting input from others and taking action
+**Technical**
+    - Staying updated on the progress of the project
+    - Learning the different tools
+    - Being easy to work with and quick learning
+    - Failing and being open minded
