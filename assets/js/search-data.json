@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Jokes",
-            "content": "",
-            "url": "https://b-g101.github.io/APCSA-BRIA/2022/10/09/jokes.html",
-            "relUrl": "/2022/10/09/jokes.html",
+            "title": "Fetch of Backend Jokes",
+            "content": "Joke HaHa Boohoo .",
+            "url": "https://b-g101.github.io/APCSA-BRIA/data/jokes",
+            "relUrl": "/data/jokes",
             "date": " • Oct 9, 2022"
         }
         
