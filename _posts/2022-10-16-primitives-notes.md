@@ -1,12 +1,11 @@
 ---
 toc: true
 layout: post
-description: Unit 1: Primitives
-categories: [markdown,test prep]
+description: Primitives class notes
+categories: [markdown]
 title: Primitives Class Notes
 ---
-# Primitives
-
+# Primitives Class Notes
 
 #### Why Java
 - Has simple syntax
