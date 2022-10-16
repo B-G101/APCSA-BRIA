@@ -5,7 +5,6 @@ description: Unit 1: Primitives
 categories: [markdown,test prep]
 title: Primitives Class Notes
 ---
-
 # Primitives
 
 
