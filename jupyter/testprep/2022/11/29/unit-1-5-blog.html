@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      15 min read
     
 </span></p>
 
@@ -129,7 +129,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Homework">Homework </a>
+<li class="toc-entry toc-h2"><a href="#Homework-TOC">Homework TOC </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Casting,-specifically-for-Division-(From-Unit-1:-Primitive-Types)">Casting, specifically for Division (From Unit 1: Primitive Types) </a></li>
 <li class="toc-entry toc-h3"><a href="#Wrapper-Classes-(Related-to-Unit-1:-Primitive-Types-and-Casting)">Wrapper Classes (Related to Unit 1: Primitive Types and Casting) </a></li>
@@ -139,9 +139,13 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Comparing-Objects-(This-is-most-related-to-the-Unit-2:-Using-Obects)">Comparing Objects (This is most related to the Unit 2: Using Obects) </a></li>
 <li class="toc-entry toc-h3"><a href="#while-loop-versus-do-while-loop-(Related-to-Unit-4:-Iteration)">while loop versus do while loop (Related to Unit 4: Iteration) </a></li>
 <li class="toc-entry toc-h3"><a href="#Creating-a-Class,-describe-Naming-Conventions-(Related-to-Unit-5:-Writing-Classes)">Creating a Class, describe Naming Conventions (Related to Unit 5: Writing Classes) </a></li>
+<li class="toc-entry toc-h3"><a href="#Constructor,-describe-why-there-is-no-return">Constructor, describe why there is no return </a></li>
 <li class="toc-entry toc-h3"><a href="#Accessor-methods,-relationship-to-getter-(Related-to-Unit-5:-Writing-Classes)">Accessor methods, relationship to getter (Related to Unit 5: Writing Classes) </a></li>
+<li class="toc-entry toc-h3"><a href="#Mutator-methods,-relationship-to-setter,-describe-void-return-type">Mutator methods, relationship to setter, describe void return type </a></li>
 <li class="toc-entry toc-h3"><a href="#Static-variables,-Class-variables,-show-use-case-in-code-(Relates-to-Unit-5:-Writing-Classes)">Static variables, Class variables, show use case in code (Relates to Unit 5: Writing Classes) </a></li>
+<li class="toc-entry toc-h3"><a href="#Show-use-case-of-access-modifiers:-Public,-Private,-Protected-(This-relates-to-Unit-5:-Writing-Classes)">Show use case of access modifiers: Public, Private, Protected (This relates to Unit 5: Writing Classes) </a></li>
 <li class="toc-entry toc-h3"><a href="#Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)">Static methods, Class methods (Relates to Unit 5: Writing Classes) </a></li>
+<li class="toc-entry toc-h3"><a href="#this-Keyword">this Keyword </a></li>
 <li class="toc-entry toc-h3"><a href="#main-method,-tester-methods-(This-relates-to-Unit-5:-Writing-Classes)">main method, tester methods (This relates to Unit 5: Writing Classes) </a></li>
 <li class="toc-entry toc-h3"><a href="#Subclass-constructor,-super-Keyword-(This-relates-to-Unit-5:-Writing-Classes)">Subclass constructor, super Keyword (This relates to Unit 5: Writing Classes) </a></li>
 <li class="toc-entry toc-h3"><a href="#Overriding-a-method,-same-signature-of-a-method">Overriding a method, same signature of a method </a></li>
@@ -161,8 +165,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Homework">
-<a class="anchor" href="#Homework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework<a class="anchor-link" href="#Homework"> </a>
+<h2 id="Homework-TOC">
+<a class="anchor" href="#Homework-TOC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework TOC<a class="anchor-link" href="#Homework-TOC"> </a>
 </h2>
 <table>
 <thead>
@@ -718,6 +722,47 @@ Polymorphism: any of overloading, overriding, late binding</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Constructor,-describe-why-there-is-no-return">
+<a class="anchor" href="#Constructor,-describe-why-there-is-no-return" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructor, describe why there is no return<a class="anchor-link" href="#Constructor,-describe-why-there-is-no-return"> </a>
+</h3>
+<p>Contructors are how objects are intialized. It can be used to set the intial values for object attributes. The constructor has not return because it is not called directly by the code</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">weight</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">Person</span><span class="p">(</span><span class="kt">int</span> <span class="n">age</span><span class="p">,</span> <span class="kt">int</span> <span class="n">height</span><span class="p">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>
+        <span class="n">Person</span> <span class="n">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">120</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Accessor-methods,-relationship-to-getter-(Related-to-Unit-5:-Writing-Classes)">
 <a class="anchor" href="#Accessor-methods,-relationship-to-getter-(Related-to-Unit-5:-Writing-Classes)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessor methods, relationship to getter (Related to Unit 5: Writing Classes)<a class="anchor-link" href="#Accessor-methods,-relationship-to-getter-(Related-to-Unit-5:-Writing-Classes)"> </a>
 </h3>
@@ -805,6 +850,133 @@ ID: 123456
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mutator-methods,-relationship-to-setter,-describe-void-return-type">
+<a class="anchor" href="#Mutator-methods,-relationship-to-setter,-describe-void-return-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mutator methods, relationship to setter, describe void return type<a class="anchor-link" href="#Mutator-methods,-relationship-to-setter,-describe-void-return-type"> </a>
+</h3>
+<p>Mutator methods reset the value of a private variable. It gives other classes the ability to modify the value stoed in that variable without having direct access to the variable itself. Allows the user to set/mutate the value of the private variables of a class object. aka setters. Used along with getters to protect sensitive information (private) in a class.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="p">{</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="n">Integer</span> <span class="n">ID</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">DOB</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kt">double</span> <span class="n">GPA</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">courses</span><span class="p">;</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getID</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">ID</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setID</span><span class="p">(</span><span class="n">Integer</span> <span class="n">iD</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">ID</span> <span class="o">=</span> <span class="n">iD</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getDOB</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">DOB</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDOB</span><span class="p">(</span><span class="n">String</span> <span class="n">dOB</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">DOB</span> <span class="o">=</span> <span class="n">dOB</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">getGPA</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">GPA</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setGPA</span><span class="p">(</span><span class="kt">double</span> <span class="n">gPA</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">GPA</span> <span class="o">=</span> <span class="n">gPA</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getCourses</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">courses</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCourses</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">courses</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">courses</span> <span class="o">=</span> <span class="n">courses</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+		<span class="n">Student</span> <span class="n">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Student</span><span class="p">();</span>
+
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Student Bio [ Before using Accessors &amp; Mutators ]"</span><span class="p">);</span>
+
+		<span class="c1">// calling accessor methods</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Name: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\tID: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getID</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\tGPA: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getGPA</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\tDOB: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getDOB</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\tCourses: "</span> <span class="o">+</span>  <span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">student1</span><span class="p">.</span><span class="na">getCourses</span><span class="p">()));</span>
+
+		<span class="c1">// calling mutator methods</span>
+		<span class="n">student1</span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="s">"Alex Coy"</span><span class="p">);</span>
+		<span class="n">student1</span><span class="p">.</span><span class="na">setID</span><span class="p">(</span><span class="mi">3115</span><span class="p">);</span>
+		<span class="n">student1</span><span class="p">.</span><span class="na">setGPA</span><span class="p">(</span><span class="mf">2.79</span><span class="p">);</span>
+		<span class="n">student1</span><span class="p">.</span><span class="na">setDOB</span><span class="p">(</span><span class="s">"08/08/1998"</span><span class="p">);</span>
+		<span class="n">String</span><span class="o">[]</span> <span class="n">courses</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"Object Oriented Programming"</span><span class="p">,</span> <span class="s">"Cryptography"</span><span class="p">,</span> <span class="s">"Photography"</span><span class="p">,</span> <span class="s">"Network Security"</span> <span class="p">};</span>
+		<span class="n">student1</span><span class="p">.</span><span class="na">setCourses</span><span class="p">(</span><span class="n">courses</span><span class="p">);</span>
+
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nStudent Bio [ After using Mutators &amp; Accessors ]"</span><span class="p">);</span>
+
+		<span class="c1">// calling accessor methods</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Name: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\tID: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getID</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\tGPA: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getGPA</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\tDOB: "</span> <span class="o">+</span> <span class="n">student1</span><span class="p">.</span><span class="na">getDOB</span><span class="p">());</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\tCourses: "</span> <span class="o">+</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">student1</span><span class="p">.</span><span class="na">getCourses</span><span class="p">()));</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Student</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Student Bio [ Before using Accessors &amp; Mutators ]
+Name: null	ID: null	GPA: 0.0	DOB: null	Courses: null
+
+Student Bio [ After using Mutators &amp; Accessors ]
+Name: Alex Coy	ID: 3115	GPA: 2.79	DOB: 08/08/1998	Courses: [Object Oriented Programming, Cryptography, Photography, Network Security]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Static-variables,-Class-variables,-show-use-case-in-code-(Relates-to-Unit-5:-Writing-Classes)">
 <a class="anchor" href="#Static-variables,-Class-variables,-show-use-case-in-code-(Relates-to-Unit-5:-Writing-Classes)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static variables, Class variables, show use case in code (Relates to Unit 5: Writing Classes)<a class="anchor-link" href="#Static-variables,-Class-variables,-show-use-case-in-code-(Relates-to-Unit-5:-Writing-Classes)"> </a>
 </h3>
@@ -841,14 +1013,71 @@ ID: 123456
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)">
-<a class="anchor" href="#Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static methods, Class methods (Relates to Unit 5: Writing Classes)<a class="anchor-link" href="#Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)"> </a>
+<h3 id="Show-use-case-of-access-modifiers:-Public,-Private,-Protected-(This-relates-to-Unit-5:-Writing-Classes)">
+<a class="anchor" href="#Show-use-case-of-access-modifiers:-Public,-Private,-Protected-(This-relates-to-Unit-5:-Writing-Classes)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show use case of access modifiers: Public, Private, Protected (This relates to Unit 5: Writing Classes)<a class="anchor-link" href="#Show-use-case-of-access-modifiers:-Public,-Private,-Protected-(This-relates-to-Unit-5:-Writing-Classes)"> </a>
 </h3>
-<p>A static method is a method that belongs to the class and not a specific object of the class. It can only access static data and not non-static data. It can call other static metohds and can be accessed by the class name. It cannot refer to "this" or "super".</p>
+<p>Public: allows access from any class</p>
+<p>Private: restricts access to only the class that declared the structure</p>
+<p>Default: acccess allowed withint the same package</p>
+<p>Protected: access allowed within the class/package and outside of the class/package only if there is a child class/package. the only way to access is through inheritance</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)">
+<a class="anchor" href="#Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static methods, Class methods (Relates to Unit 5: Writing Classes)<a class="anchor-link" href="#Static-methods,-Class-methods-(Relates-to-Unit-5:-Writing-Classes)"> </a>
+</h3>
+<p>A static method is a method that belongs to the class and not a specific object of the class. It can only access static data and not non-static data. It can call other static methods and can be accessed by the class name. It cannot refer to "this" or "super". Static methods are methods that can be called within a program without creating an object of the class</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+<span class="c1">// static method</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getTotal</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">getTotal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">));</span> <span class="c1">// Prints: 5</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -899,11 +1128,11 @@ ID: 123456
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Value of a = 0
-Value of b = 3
+Value of b = 6
 Value of a = 0
-Value of b = 4
+Value of b = 7
 Value of a = 0
-Value of b = 5
+Value of b = 8
 </pre>
 </div>
 </div>
@@ -914,6 +1143,17 @@ Value of b = 5
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="this-Keyword">
+<a class="anchor" href="#this-Keyword" aria-hidden="true"><span class="octicon octicon-link"></span></a>this Keyword<a class="anchor-link" href="#this-Keyword"> </a>
+</h3>
+<p>this refers to the current object in a method or constructor. it refers to the object whose method or constructor is being called.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
