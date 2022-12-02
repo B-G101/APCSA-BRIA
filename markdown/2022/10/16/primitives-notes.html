@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -101,6 +101,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#why-java">Why Java</a></li>
 <li class="toc-entry toc-h4"><a href="#primitives-vs-non-primitives">Primitives vs. Non primitives</a></li>
 <li class="toc-entry toc-h4"><a href="#review-cont">Review Cont</a></li>
+<li class="toc-entry toc-h3"><a href="#hacks">Hacks</a></li>
 <li class="toc-entry toc-h3"><a href="#frq-2006">FRQ 2006</a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#1-part-a">1 Part A</a></li>
@@ -194,18 +195,78 @@ Primitives Types</li>
   </li>
 </ul>
 
+<h3 id="hacks">
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h3>
+<ol>
+  <li>10/4 is equal to 2.5 which will round down to 2 or round up to 3 depending on the rounding since it is an integer data type. –&gt; 2
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span> 
+<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="o">;</span>
+<span class="c1">/// What is the value of z?</span>
+</code></pre></div>    </div>
+    <p><br></p>
+  </li>
+  <li>val is 205 and its going to be looped 5 total times. 2 to the power of 5 is 32. 205/32 is equal to 6. –&gt;
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">205</span><span class="o">;</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++&gt;)</span> <span class="o">{</span>
+  <span class="n">val</span><span class="o">/=</span><span class="mi">2</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">// At the end of its executition, what is the value of the variable val in the code above?</span>
+</code></pre></div>    </div>
+    <p><br></p>
+  </li>
+  <li>
+    <p>A is not a valid assignment statement because the variable is not on the left side of the assignment sign. D is not a valid assignment statement because the equation is on the left side and not the right side of the assignment sign. –? a, d
+<br></p>
+  </li>
+  <li>I is being added to itself and the loop executes 5 times. So 3+3&gt;6+6&gt;12+12&gt;24+24&gt;48+48=96 –&gt; 96
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">5</span><span class="o">;</span><span class="n">j</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">;</span><span class="n">j</span><span class="o">--){</span>
+  <span class="n">i</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">// What will be the value of i at the end of this loop's iteration</span>
+</code></pre></div>    </div>
+    <p><br></p>
+  </li>
+  <li>The loop iterates 4 times. 5<em>1&gt;5</em>2&gt;10<em>3&gt;30</em>4 = 120 –&gt; 120
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">5</span><span class="o">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">27</span><span class="o">;</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">l</span><span class="o">=</span><span class="mi">23</span><span class="o">;</span><span class="n">l</span><span class="o">&lt;</span><span class="n">p</span><span class="o">;</span><span class="n">l</span><span class="o">++&gt;){</span>
+  <span class="n">i</span> <span class="o">*=</span> <span class="o">(</span><span class="n">l</span><span class="o">-</span><span class="mi">22</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="c1">// What is the value for I at the end of the code above?</span>
+</code></pre></div>    </div>
+    <p><br></p>
+  </li>
+  <li>This is an example of casting that converts the doubles into int. This is narrowing casting since the data type is getting smaller. 455 + 3.75 = 458.75 rounded up is 459 or rounded down is 458 –&gt; 458
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">4.55</span><span class="o">,</span> <span class="n">d2</span> <span class="o">=</span> <span class="mf">3.75</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="n">d</span><span class="o">*</span><span class="mi">100</span> <span class="o">+</span> <span class="n">d2</span><span class="o">);</span>
+<span class="c1">// What is the value of j at the end of the code's execution?</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 <h3 id="frq-2006">
 <a class="anchor" href="#frq-2006" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 2006</h3>
 
 <h4 id="1-part-a">
 <a class="anchor" href="#1-part-a" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Part A</h4>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">conflictsWith</span><span class="o">(</span><span class="nc">Appointment</span> <span class="n">other</span><span class="o">){</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// boolean meaning return type true or false</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">conflictsWith</span><span class="o">(</span><span class="nc">Appointment</span> <span class="n">other</span><span class="o">){</span>
+  <span class="c1">// getting the time of two different appointments and checking if they overlap with one another using given method</span>
   <span class="k">if</span> <span class="o">(</span><span class="n">getTime</span><span class="o">().</span><span class="na">overlapsWith</span><span class="o">(</span><span class="n">other</span><span class="o">.</span><span class="na">getTime</span><span class="o">())){</span>
     <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="c1">// returning true if there is an overlap otherwise false is returned</span>
   <span class="k">else</span> <span class="o">{</span>
     <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
   <span class="o">}</span>
+<span class="o">}</span>
 <span class="o">}</span>
 
 </code></pre></div></div>
@@ -214,8 +275,11 @@ Primitives Types</li>
 <a class="anchor" href="#1-part-b" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Part B</h4>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">clearConflicts</span><span class="o">(</span><span class="nc">Appointment</span> <span class="n">appt</span><span class="o">){</span>
+  <span class="c1">// Looping through each appointment in the appointment list array list</span>
   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">apptList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+    <span class="c1">// Using given methods to check if the paramater appointment conflists with any appointments already in the appointment arraylist</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">appt</span><span class="o">.</span><span class="na">conflictsWith</span><span class="o">(</span><span class="n">apptList</span><span class="o">(</span><span class="n">i</span><span class="o">))){</span>
+      <span class="c1">// if the appointments overlap then the appointment at the given index will be removed from the array list</span>
       <span class="n">appList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
     <span class="o">}</span>
   <span class="o">}</span>
@@ -226,10 +290,12 @@ Primitives Types</li>
 <a class="anchor" href="#1-part-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Part C</h4>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">addAppt</span><span class="o">(</span><span class="nc">Appointment</span> <span class="n">appt</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">emergency</span><span class="o">){</span>
+  <span class="c1">// if there is an emergency then the appointment will clear</span>
   <span class="k">if</span> <span class="o">(</span><span class="n">emergency</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">clearConflicts</span><span class="o">(</span><span class="n">appt</span><span class="o">);</span>
     <span class="o">}</span>
   <span class="k">else</span> <span class="o">{</span>
+    <span class="c1">// otherwise it loops through the appointment list and checks if that appointment conflicts with another appointment using the get method</span>
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">apptList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">appt</span><span class="o">.</span><span class="na">conflictsWith</span><span class="o">((</span><span class="nc">Appointment</span><span class="o">)</span><span class="n">apptList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
@@ -246,7 +312,6 @@ Primitives Types</li>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">double</span> <span class="nf">purchasePrice</span><span class="o">(){</span>
   <span class="k">return</span> <span class="o">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">taxrate</span><span class="o">)</span> <span class="o">*</span> <span class="n">getListPrice</span><span class="o">());</span>
-  
   
 <span class="o">}</span>
 </code></pre></div></div>
