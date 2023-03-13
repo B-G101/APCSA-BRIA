@@ -7,7 +7,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      22 min read
+      26 min read
     
 </span></p>
 
@@ -1677,6 +1677,209 @@ Hacks Menu:
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Review</span> <span class="p">{</span> 
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">rating</span><span class="p">;</span> 
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">comment</span><span class="p">;</span> 
+
+    <span class="cm">/** Precondition: r &gt;= 0 * c is not null. */</span> 
+    <span class="kd">public</span> <span class="nf">Review</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">String</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="n">rating</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span> 
+        <span class="n">comment</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span> 
+    <span class="p">}</span> 
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRating</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="n">rating</span><span class="p">;</span> 
+    <span class="p">}</span> 
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getComment</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="n">comment</span><span class="p">;</span> 
+    <span class="p">}</span> 
+    <span class="c1">// There may be instance variables, constructors, and methods that are not shown. </span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The ReviewAnalysis class contains methods used to analyze the reviews provided by users. You will write two methods of the ReviewAnalysis class</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReviewAnalysis</span> <span class="p">{</span>
+    <span class="cm">/** All user reviews to be included in this analysis */</span> 
+    <span class="kd">private</span> <span class="n">Review</span><span class="o">[]</span> <span class="n">allReviews</span><span class="p">;</span> 
+
+    <span class="cm">/** Initializes allReviews to contain all the Review objects to be analyzed */</span> 
+    <span class="kd">public</span> <span class="nf">ReviewAnalysis</span><span class="p">()</span> <span class="p">{</span>
+         <span class="cm">/* implementation not shown */</span> 
+        <span class="p">}</span> 
+    
+    <span class="cm">/** Returns a double representing the average rating of all the Review objects to be * analyzed, as described in part (a) </span>
+<span class="cm">     * * Precondition: allReviews contains at least one Review. </span>
+<span class="cm">     * * No element of allReviews is null. */</span> 
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getAverageRating</span><span class="p">()</span> <span class="p">{</span>
+         <span class="cm">/* to be implemented in part (a) */</span> 
+        <span class="p">}</span> 
+    
+    <span class="cm">/** Returns an ArrayList of String objects containing formatted versions of </span>
+<span class="cm">     * * selected user comments, as described in part (b) </span>
+<span class="cm">     * * Precondition: allReviews contains at least one Review. * </span>
+<span class="cm">     * No element of allReviews is null. * </span>
+<span class="cm">     * Postcondition: allReviews is unchanged. */</span> 
+    
+    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">collectComments</span><span class="p">()</span> <span class="p">{</span>
+         <span class="cm">/* to be implemented in part (b) */</span> 
+        <span class="p">}</span> 
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>a. Write the ReviewAnalysis method getAverageRating, which returns the average rating (arithmetic mean) of all elements of allReviews. For example, getAverageRating would return 3.4 if allReviews contained the following Review objects.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">double</span> <span class="nf">getAverageRating</span><span class="p">()</span> <span class="p">{</span>
+   <span class="c1">// The total amount of each individual reviews</span>
+
+   <span class="kt">int</span> <span class="n">reviewTotal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="c1">// The total amount of reviews in the array allReviews</span>
+
+   <span class="kt">int</span> <span class="n">reviewAmount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="c1">// Loops through every review in the arry allReviews</span>
+
+   <span class="k">for</span> <span class="p">(</span><span class="n">Review</span> <span class="n">rating</span> <span class="p">:</span> <span class="n">allReviews</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// gets the specific rating value and adds it to the total</span>
+      <span class="n">reviewTotal</span> <span class="o">=</span> <span class="n">reviewTotal</span> <span class="o">+</span> <span class="n">rating</span><span class="p">.</span><span class="na">getRating</span><span class="p">();</span>
+
+      <span class="c1">// add ones to the total amount of reviews</span>
+      <span class="n">reviewAmount</span> <span class="o">=</span> <span class="n">reviewAmount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="p">}</span>
+   
+
+   <span class="c1">// creates the average which should be a double since there are decimals needed</span>
+   <span class="kt">double</span> <span class="n">averageRating</span> <span class="o">=</span> <span class="n">reviewTotal</span><span class="o">/</span><span class="n">reviewAmount</span><span class="p">;</span>
+   <span class="k">return</span> <span class="n">averageRating</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>b. Write the ReviewAnalysis method collectComments, which collects and formats only comments that contain an exclamation point. The method returns an ArrayList of String objects containing copies of user comments from allReviews that contain an exclamation point, formatted as follows. An empty ArrayList is returned if no comment in allReviews contains an exclamation point.</p>
+<ul>
+<li>The String inserted into the ArrayList to be returned begins with the index of the Review in allReviews. </li>
+<li>The index is immediately followed by a hyphen ("-"). </li>
+<li>The hyphen is followed by a copy of the original comment. </li>
+<li>The String must end with either a period or an exclamation point. If the original comment from allReviews does not end in either a period or an exclamation point, a period is added.</li>
+</ul>
+<p>The following ArrayList would be returned by a call to collectComments with the given contents of allReviews. The reviews at index 1 and index 4 in allReviews are not included in the ArrayList to return since neither review contains an exclamation point.</p>
+<p>Complete method collectComments. 
+/*<em> Returns an ArrayList of String objects containing formatted versions of 
+ selected user comments, as described in part (b) 
+ Precondition: allReviews contains at least one Review. 
+ No element of allReviews is null. 
+ Postcondition: allReviews is unchanged. </em>/</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">collectComments</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// arraylist for strings of reviews that are formatted and contain exclaimation points</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">commentsArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="c1">// loops through each review</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">Review</span> <span class="n">rating</span> <span class="p">:</span> <span class="n">allReviews</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// to keep track of the number that should be in front of the formatted comment</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="c1">// get a comment from allReviews</span>
+        <span class="n">String</span> <span class="n">comment</span> <span class="o">=</span> <span class="n">rating</span><span class="p">.</span><span class="na">getComment</span><span class="p">();</span>
+
+        <span class="c1">// if there is an index of an ! in the string then it will be counted and make the if conditional true</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">comment</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">"!"</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="c1">// correct formatting of the comment as a new String</span>
+            <span class="n">String</span> <span class="n">newComment</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="s">"-"</span> <span class="o">+</span> <span class="n">comment</span><span class="p">;</span>
+
+            <span class="c1">//creates lastChar, which stores the last character in the formatted string</span>
+            <span class="n">String</span> <span class="n">lastChar</span> <span class="o">=</span> <span class="n">newComment</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">newComment</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+            <span class="c1">// checks if there is any punctuation at the end of the string</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="o">!</span><span class="n">lastChar</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"!"</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="n">lastChar</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"."</span><span class="p">)))</span> <span class="p">{</span>
+                <span class="c1">// If there is no punctuation then a period is added at the end</span>
+                <span class="n">newComment</span> <span class="o">=</span> <span class="n">newComment</span> <span class="o">+</span> <span class="s">"."</span><span class="p">;</span>
+
+                <span class="c1">// adds the comment to the array</span>
+                <span class="n">commentsArray</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newComment</span><span class="p">);</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>    
+    <span class="k">return</span> <span class="n">commentsArray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
