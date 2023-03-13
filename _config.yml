@@ -38,6 +38,7 @@ baseurl: "/APCSA-BRIA" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
+  skin: dark
   social_links:
     - { platform: github, user_url: "https://github.com/exampleUser" }
     - { platform: twitter, user_url: "https://twitter.com/exampleUser" }
@@ -64,6 +65,7 @@ exclude:
   - docker-compose.yml
   - action.yml
   - Makefile
+  - settings.ini
 
 # this setting allows you to keep pages organized in the _pages folder
 include:
@@ -121,6 +123,4 @@ kramdown:
 feed:
   posts_limit: 5 #default posts_limit: 10
   excerpt_only: true
-  
-exclude:
-  - settings.ini
+
