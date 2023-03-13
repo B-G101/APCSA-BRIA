@@ -1,66 +1,78 @@
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Boolean Expressions and If Statements | Bria’s APCSA Page</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Boolean Expressions and If Statements" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Unit 2 // AP CSA" />
+<meta property="og:description" content="Unit 2 // AP CSA" />
+<link rel="canonical" href="https://b-g101.github.io/APCSA-BRIA/jupyter/unit2/2022/09/01/boolean-expressions.html" />
+<meta property="og:url" content="https://b-g101.github.io/APCSA-BRIA/jupyter/unit2/2022/09/01/boolean-expressions.html" />
+<meta property="og:site_name" content="Bria’s APCSA Page" />
+<meta property="og:image" content="https://b-g101.github.io/APCSA-BRIA/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-01T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://b-g101.github.io/APCSA-BRIA/images/chart-preview.png" />
+<meta property="twitter:title" content="Boolean Expressions and If Statements" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-01T00:00:00-05:00","datePublished":"2022-09-01T00:00:00-05:00","description":"Unit 2 // AP CSA","headline":"Boolean Expressions and If Statements","image":"https://b-g101.github.io/APCSA-BRIA/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://b-g101.github.io/APCSA-BRIA/jupyter/unit2/2022/09/01/boolean-expressions.html"},"url":"https://b-g101.github.io/APCSA-BRIA/jupyter/unit2/2022/09/01/boolean-expressions.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSA-BRIA/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://b-g101.github.io/APCSA-BRIA/feed.xml" title="Bria's APCSA Page" /><link rel="shortcut icon" type="image/x-icon" href="/APCSA-BRIA/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Boolean Expressions and If Statements</h1><p class="page-description">Unit 2 // AP CSA</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-01T00:00:00-05:00" itemprop="datePublished">
-        Sep 1, 2022
-      </time>
-       • <span class="read-time" title="Estimated read time">
-    
-    
-      7 min read
-    
-</span></p>
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
 
-    
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
-      
-        <a class="category-tags-link" href="/APCSA-BRIA/categories/#jupyter">jupyter</a>
-        &nbsp;
-      
-        <a class="category-tags-link" href="/APCSA-BRIA/categories/#unit2">unit2</a>
-        
-      
-      </p>
-    
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
 
-    
-      
-        <div class="pb-5 d-flex flex-justify-center">
-          <div class="px-2">
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSA-BRIA/">Bria&#39;s APCSA Page</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
 
-    <a href="https://github.com/B-G101/APCSA-BRIA/tree/master/_notebooks/2022-09-01-boolean-expressions.ipynb" role="button" target="_blank">
-<img class="notebook-badge-image" src="/APCSA-BRIA/assets/badges/github.svg" alt="View On GitHub">
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/B-G101/APCSA-BRIA/master?filepath=_notebooks%2F2022-09-01-boolean-expressions.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/APCSA-BRIA/assets/badges/binder.svg" alt="Open In Binder"/>
-    </a>
-</div>
-
-          <div class="px-2">
-    <a href="https://colab.research.google.com/github/B-G101/APCSA-BRIA/blob/master/_notebooks/2022-09-01-boolean-expressions.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/APCSA-BRIA/assets/badges/colab.svg" alt="Open In Colab"/>
-    </a>
-</div>
-          <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FB-G101%2FAPCSA-BRIA%2Fblob%2Fmaster%2F_notebooks%2F2022-09-01-boolean-expressions.ipynb" target="_blank">
-      <img class="notebook-badge-image" src="/APCSA-BRIA/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
-  </a>
-</div>
-
-        </div>
-      </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h3"><a href="#If-Statements">If Statements </a></li>
-<li class="toc-entry toc-h3"><a href="#If-Else-Statements">If-Else Statements </a></li>
-<li class="toc-entry toc-h3"><a href="#If-Else-If-Else-Statements">If-Else-If-Else Statements </a></li>
-<li class="toc-entry toc-h3"><a href="#If,-Else,-ElseIf-Statements-versus-Switch-Cases">If, Else, ElseIf Statements versus Switch Cases </a></li>
-<li class="toc-entry toc-h3"><a href="#De-Morgan's-Law">De Morgan&#39;s Law </a></li>
-</ul><!--
+        <div class="trigger"><a class="page-link" href="/APCSA-BRIA/notes/">Notes</a><a class="page-link" href="/APCSA-BRIA/vocab/">Vocab</a><a class="page-link" href="/APCSA-BRIA/categories/">Tags</a><a class="page-link" href="/APCSA-BRIA/search/">Search</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -69,13 +81,9 @@
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If-Statements">
-<a class="anchor" href="#If-Statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>If Statements<a class="anchor-link" href="#If-Statements"> </a>
-</h3>
-<p>If a code statement is true then the code within the <strong>if</strong> statement block will execute. The example below uses user input and an if statement to guess what color the question is in.</p>
+<h3 id="If-Statements">If Statements<a class="anchor-link" href="#If-Statements"> </a></h3><p>If a code statement is true then the code within the <strong>if</strong> statement block will execute. The example below uses user input and an if statement to guess what color the question is in.</p>
 
 </div>
 </div>
@@ -93,13 +101,13 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
         <span class="n">Scanner</span> <span class="n">userQuestion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span> <span class="c1">// Gets user input using Scanner</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\u001B[34m"</span> <span class="o">+</span> <span class="s">"What color is this text?"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\u001B[34m&quot;</span> <span class="o">+</span> <span class="s">&quot;What color is this text?&quot;</span><span class="p">);</span>
 
         <span class="n">String</span> <span class="n">colorGuess</span> <span class="o">=</span> <span class="n">userQuestion</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// Sets user input equal to new variable colorGuess</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Your guess is: "</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Your guess is: &quot;</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
         
-        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"blue"</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
         <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>
@@ -112,7 +120,6 @@
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
         <p>
-</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -126,18 +133,14 @@ Your guess is: blue which is correct!</span></pre>
 
 </div>
 </div>
-
+</p>
     </details>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If-Else-Statements">
-<a class="anchor" href="#If-Else-Statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>If-Else Statements<a class="anchor-link" href="#If-Else-Statements"> </a>
-</h3>
-<p>If the code statement in the <strong>if</strong> is true then the code within the the <strong>if</strong> statement will execute. If the code statement in the <strong>if</strong> is false then the code within the <strong>else</strong> statement will execute. The example below uses if and else statements to check if the response to a question is correct or not.</p>
+<h3 id="If-Else-Statements">If-Else Statements<a class="anchor-link" href="#If-Else-Statements"> </a></h3><p>If the code statement in the <strong>if</strong> is true then the code within the the <strong>if</strong> statement will execute. If the code statement in the <strong>if</strong> is false then the code within the <strong>else</strong> statement will execute. The example below uses if and else statements to check if the response to a question is correct or not.</p>
 
 </div>
 </div>
@@ -155,17 +158,17 @@ Your guess is: blue which is correct!</span></pre>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
         <span class="n">Scanner</span> <span class="n">userQuestion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span> <span class="c1">// Gets user input using Scanner</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\u001B[34m"</span> <span class="o">+</span> <span class="s">"What color is this text?"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\u001B[34m&quot;</span> <span class="o">+</span> <span class="s">&quot;What color is this text?&quot;</span><span class="p">);</span>
 
         <span class="n">String</span> <span class="n">colorGuess</span> <span class="o">=</span> <span class="n">userQuestion</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// Sets user input equal to new variable colorGuess</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Your guess is: "</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Your guess is: &quot;</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
         
-        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"blue"</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
         <span class="p">}</span>
 
         <span class="k">else</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// If the statement is incorrect, the else statement will execute and tell the user that their answer is incorrect. </span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// If the statement is incorrect, the else statement will execute and tell the user that their answer is incorrect. </span>
         <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>
@@ -178,7 +181,6 @@ Your guess is: blue which is correct!</span></pre>
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
         <p>
-</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -192,18 +194,14 @@ Your guess is: yellow which is incorrect!</span></pre>
 
 </div>
 </div>
-
+</p>
     </details>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If-Else-If-Else-Statements">
-<a class="anchor" href="#If-Else-If-Else-Statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>If-Else-If-Else Statements<a class="anchor-link" href="#If-Else-If-Else-Statements"> </a>
-</h3>
-<p>This option of conditionals is helpful if there are multiple options that are correct. If the code statement in the <strong>if</strong> is true, then the code segment under the if statement will execute. If the code statement in the <strong>if</strong> is false, then the code segment in the <strong>else if</strong> statement will execute if it is true. If the code segment in the <strong>else if</strong> statement is false, then the code segment in the <strong>else</strong> statement will execute.</p>
+<h3 id="If-Else-If-Else-Statements">If-Else-If-Else Statements<a class="anchor-link" href="#If-Else-If-Else-Statements"> </a></h3><p>This option of conditionals is helpful if there are multiple options that are correct. If the code statement in the <strong>if</strong> is true, then the code segment under the if statement will execute. If the code statement in the <strong>if</strong> is false, then the code segment in the <strong>else if</strong> statement will execute if it is true. If the code segment in the <strong>else if</strong> statement is false, then the code segment in the <strong>else</strong> statement will execute.</p>
 
 </div>
 </div>
@@ -221,21 +219,21 @@ Your guess is: yellow which is incorrect!</span></pre>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
         <span class="n">Scanner</span> <span class="n">userQuestion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span> <span class="c1">// Gets user input using Scanner</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\u001B[34m"</span> <span class="o">+</span> <span class="s">"What color is this text?"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\u001B[34m&quot;</span> <span class="o">+</span> <span class="s">&quot;What color is this text?&quot;</span><span class="p">);</span>
 
         <span class="n">String</span> <span class="n">colorGuess</span> <span class="o">=</span> <span class="n">userQuestion</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// Sets user input equal to new variable colorGuess</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Your guess is: "</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Your guess is: &quot;</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
         
-        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"blue"</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"cyan"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// This is another possible correct answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;cyan&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible correct answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
         <span class="k">else</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// If the statement is incorrect, the else statement will execute and tell the user that their answer is incorrect. </span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// If the statement is incorrect, the else statement will execute and tell the user that their answer is incorrect. </span>
         <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>
@@ -248,7 +246,6 @@ Your guess is: yellow which is incorrect!</span></pre>
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
         <p>
-</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -262,18 +259,14 @@ Your guess is: cyan which is correct!</span></pre>
 
 </div>
 </div>
-
+</p>
     </details>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="If,-Else,-ElseIf-Statements-versus-Switch-Cases">
-<a class="anchor" href="#If,-Else,-ElseIf-Statements-versus-Switch-Cases" aria-hidden="true"><span class="octicon octicon-link"></span></a>If, Else, ElseIf Statements versus Switch Cases<a class="anchor-link" href="#If,-Else,-ElseIf-Statements-versus-Switch-Cases"> </a>
-</h3>
-<p>Below is the same code segment, but expanded with more color options. The first code block uses if, else, and else if statements. The bottom code block uses switch cases.</p>
+<h3 id="If,-Else,-ElseIf-Statements-versus-Switch-Cases">If, Else, ElseIf Statements versus Switch Cases<a class="anchor-link" href="#If,-Else,-ElseIf-Statements-versus-Switch-Cases"> </a></h3><p>Below is the same code segment, but expanded with more color options. The first code block uses if, else, and else if statements. The bottom code block uses switch cases.</p>
 
 </div>
 </div>
@@ -291,41 +284,41 @@ Your guess is: cyan which is correct!</span></pre>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
         <span class="n">Scanner</span> <span class="n">userQuestion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span> <span class="c1">// Gets user input using Scanner</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\u001B[34m"</span> <span class="o">+</span> <span class="s">"What color is this text?"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\u001B[34m&quot;</span> <span class="o">+</span> <span class="s">&quot;What color is this text?&quot;</span><span class="p">);</span>
 
         <span class="n">String</span> <span class="n">colorGuess</span> <span class="o">=</span> <span class="n">userQuestion</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// Sets user input equal to new variable colorGuess</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Your guess is: "</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Your guess is: &quot;</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
         
-        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"blue"</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Uses String method equalsIgnoreCase to check if the two strings are identical. The result is a boolean expression that if true will execute the if statement.</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// When the answer is correct, this statement is printed</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"cyan"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// This is another possible correct answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;cyan&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible correct answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"red"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"green"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;green&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"yellow"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;yellow&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"torquise"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is correct!"</span><span class="p">);</span> <span class="c1">// This is another possible correct answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;torquise&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is correct!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible correct answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">"orange"</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess "blue"</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// This is another possible incorrect answer, so this statement will be printed if the user does not guess &quot;blue&quot;</span>
         <span class="p">}</span>
 
         <span class="k">else</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" which is incorrect!"</span><span class="p">);</span> <span class="c1">// If the statement is incorrect, the else statement will execute and tell the user that their answer is incorrect. </span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; which is incorrect!&quot;</span><span class="p">);</span> <span class="c1">// If the statement is incorrect, the else statement will execute and tell the user that their answer is incorrect. </span>
         <span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span>
@@ -338,7 +331,6 @@ Your guess is: cyan which is correct!</span></pre>
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
         <p>
-</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -352,7 +344,7 @@ Your guess is: purple which is incorrect!</span></pre>
 
 </div>
 </div>
-
+</p>
     </details>
 </div>
     
@@ -367,39 +359,39 @@ Your guess is: purple which is incorrect!</span></pre>
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
         <span class="n">Scanner</span> <span class="n">userQuestion</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span> <span class="c1">// Gets user input using Scanner</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\u001B[34m"</span> <span class="o">+</span> <span class="s">"What color is this text?"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\u001B[34m&quot;</span> <span class="o">+</span> <span class="s">&quot;What color is this text?&quot;</span><span class="p">);</span>
 
         <span class="n">String</span> <span class="n">colorGuess</span> <span class="o">=</span> <span class="n">userQuestion</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// Sets user input equal to new variable colorGuess</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Your guess is: "</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Your guess is: &quot;</span> <span class="o">+</span> <span class="n">colorGuess</span><span class="p">);</span>
         <span class="n">String</span> <span class="n">response</span><span class="p">;</span>
 
         <span class="k">switch</span> <span class="p">(</span><span class="n">colorGuess</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Depending on what the user guesses, the case that matches the color guessed will execute.</span>
-            <span class="k">case</span> <span class="s">"blue"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is correct!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;blue&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is correct!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"cyan"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is correct!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;cyan&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is correct!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"purple"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is incorrect!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;purple&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is incorrect!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"turquise"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is correct!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;turquise&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is correct!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"yellow"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is incorrect!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;yellow&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is incorrect!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"red"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is incorrect!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;red&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is incorrect!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"green"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is incorrect!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;green&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is incorrect!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="s">"orange"</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is incorrect!"</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;orange&quot;</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is incorrect!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>               
             <span class="k">default</span><span class="p">:</span>
-                <span class="n">response</span> <span class="o">=</span> <span class="s">" which is not a valid response!"</span><span class="p">;</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="s">&quot; which is not a valid response!&quot;</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>  
         <span class="p">}</span> 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
@@ -415,7 +407,6 @@ Your guess is: purple which is incorrect!</span></pre>
 <details class="description">
       <summary class="btn btn-sm" data-open="Hide Output" data-close="Show Output"></summary>
         <p>
-</p>
 <div class="output_wrapper">
 <div class="output">
 
@@ -429,18 +420,14 @@ Your guess is: green which is incorrect!</span></pre>
 
 </div>
 </div>
-
+</p>
     </details>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="De-Morgan's-Law">
-<a class="anchor" href="#De-Morgan's-Law" aria-hidden="true"><span class="octicon octicon-link"></span></a>De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a>
-</h3>
-<p>De Morgan's law shows how numbers are related through their opposites. According to De Morgan's Law logic, "the complement of the union of two sets is equal to the intersection of their separate complements." In code the definition is "if two (or more) input variables are AND’ed and negated, it should be equivalent to the OR of the complements of the individual input variables"</p>
+<h3 id="De-Morgan's-Law">De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a></h3><p>De Morgan's law shows how numbers are related through their opposites. According to De Morgan's Law logic, "the complement of the union of two sets is equal to the intersection of their separate complements." In code the definition is "if two (or more) input variables are AND’ed and negated, it should be equivalent to the OR of the complements of the individual input variables"</p>
 
 </div>
 </div>
@@ -458,9 +445,9 @@ Your guess is: green which is incorrect!</span></pre>
         <span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">a</span><span class="o">&amp;&amp;</span><span class="n">b</span><span class="p">)){</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"a = "</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"b = "</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Test 1: True"</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a = &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;b = &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Test 1: True&quot;</span><span class="p">);</span>
         <span class="p">}</span>
 
     <span class="p">}</span>
@@ -505,9 +492,9 @@ Test 1: True
         <span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">a</span> <span class="o">||</span> <span class="o">!</span><span class="n">b</span><span class="p">){</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"a = "</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"b = "</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Test 2: True"</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a = &quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;b = &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Test 2: True&quot;</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -542,13 +529,47 @@ Test 2: True
 
 
 
-  </div><!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js"
-        repo="B-G101/APCSA-BRIA"
-        issue-term="title"
-        label="blogpost-comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script><a class="u-url" href="/APCSA-BRIA/jupyter/unit2/2022/09/01/boolean-expressions.html" hidden></a>
-</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSA-BRIA/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://b-g101.github.io/APCSA-BRIA/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSA-BRIA/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/exampleUser" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSA-BRIA/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/exampleUser" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSA-BRIA/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
