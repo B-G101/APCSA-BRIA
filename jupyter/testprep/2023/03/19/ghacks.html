@@ -1363,7 +1363,13 @@ Integers data: 0 1 2 3 4 5 6 7 8 9
         <span class="n">sNums</span><span class="p">.</span><span class="na">printStack</span><span class="p">();</span>
         <span class="n">sNums</span><span class="p">.</span><span class="na">emptyStack</span><span class="p">();</span>
 
-        
+        <span class="n">StackDriver</span><span class="p">.</span><span class="na">DEBUG</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="n">Level</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Level</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
+        <span class="n">StackDriver</span><span class="o">&lt;</span><span class="n">Generics</span><span class="o">&gt;</span> <span class="n">Generics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StackDriver</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&quot;My Generics&quot;</span><span class="p">,</span>
+            <span class="n">Level</span><span class="p">.</span><span class="na">levels</span><span class="p">()</span>
+        <span class="p">);</span>
+        <span class="n">Generics</span><span class="p">.</span><span class="na">printStack</span><span class="p">();</span>
+        <span class="n">Generics</span><span class="p">.</span><span class="na">emptyStack</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1387,6 +1393,10 @@ Full Stack: [southward, slithered, slowly, sallying, snakes, slimy, seven]
 Size: 10
 Top Element: 9
 Full Stack: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+Size: 3
+Top Element: The Forest
+Full Stack: [The Forest, The Jungle, The Village]
 
 </pre>
 </div>
