@@ -1059,6 +1059,8 @@ Z
     <span class="kd">public</span> <span class="kd">final</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span> <span class="c1">// queue object</span>
     <span class="kd">public</span> <span class="kd">final</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">newqueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">stack1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
     <span class="cm">/**</span>
 <span class="cm">     *  Queue constructor</span>
 <span class="cm">     *  Title with empty queue</span>
@@ -1074,6 +1076,7 @@ Z
     <span class="kd">public</span> <span class="nf">QueueMerger</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">T</span><span class="o">[]</span> <span class="n">list1</span><span class="p">,</span> <span class="n">T</span><span class="o">[]</span> <span class="n">list2</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">addQueues</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">);</span>
+        <span class="n">QueuetoStack</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
 
     <span class="p">}</span>
 
@@ -1086,10 +1089,15 @@ Z
         <span class="p">}</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">list2</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="na">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="p">}</span>   
+            
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">QueuetoStack</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">input1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">x</span> <span class="p">:</span> <span class="n">input1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">stack1</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
         <span class="p">}</span>
 
-        
-            
     <span class="p">}</span>
 
 
@@ -1111,19 +1119,25 @@ Z
 <span class="cm">     * Print any array objects from queue</span>
 <span class="cm">     */</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printQueue</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot; count: &quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot; data: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inputted Queue 1&quot;</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
         
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inputted Queue 2&quot;</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue2</span><span class="p">)</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
         <span class="n">mergeHelper</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">queue2</span><span class="p">,</span> <span class="n">newqueue</span><span class="p">);</span>
 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Merged and Ordered Queue: &quot;</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">newqueue</span><span class="p">)</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Reverse Queue into Stack: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">stack1</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1174,10 +1188,14 @@ Z
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Integers count: 0
-Integers data: 0 1 2 3 4 5 6 7 8 9 
+<pre>Inputted Queue 1
+0 1 2 3 4 5 6 7 8 9 
+Inputted Queue 2
 2 4 6 7 7 8 10 
+Merged and Ordered Queue: 
 0 1 2 2 3 4 4 5 6 6 7 7 7 8 8 9 10 
+Reverse Queue into Stack: 
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 </pre>
 </div>
 </div>
