@@ -1103,13 +1103,20 @@ Z
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mergeHelper</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">input1</span><span class="p">,</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">input2</span><span class="p">,</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
 		<span class="c1">// TODO 3</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">input1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">input2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">input1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">input2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> 
+            <span class="k">return</span><span class="p">;</span>
 		<span class="k">if</span> <span class="p">(</span><span class="n">input1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> 
 			<span class="n">output</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="n">input2</span><span class="p">.</span><span class="na">dequeue</span><span class="p">());</span>
 		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">input2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span>
 			<span class="n">output</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="n">input1</span><span class="p">.</span><span class="na">dequeue</span><span class="p">());</span>
 		<span class="k">else</span> <span class="p">{</span>
-			<span class="n">T</span> <span class="n">e</span> <span class="o">=</span> <span class="n">input1</span><span class="p">.</span><span class="na">peek</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">input2</span><span class="p">.</span><span class="na">peek</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">input1</span><span class="p">.</span><span class="na">dequeue</span><span class="p">()</span> <span class="p">:</span> <span class="n">input2</span><span class="p">.</span><span class="na">dequeue</span><span class="p">();</span>
+            <span class="n">T</span> <span class="n">e</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">input1</span><span class="p">.</span><span class="na">peek</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">input2</span><span class="p">.</span><span class="na">peek</span><span class="p">())</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">input1</span><span class="p">.</span><span class="na">dequeue</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">input2</span><span class="p">.</span><span class="na">dequeue</span><span class="p">();</span>
+            <span class="p">}</span>
 			<span class="n">output</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
 		<span class="p">}</span>
 		<span class="n">mergeHelper</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">,</span> <span class="n">output</span><span class="p">);</span>
@@ -1139,6 +1146,7 @@ Z
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Reverse Queue into Stack: &quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">stack1</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
