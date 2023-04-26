@@ -887,7 +887,7 @@ Z
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="n">T</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">NoSuchElementException</span> <span class="p">{</span>
-		<span class="c1">// TODO 6</span>
+		
 		<span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span> 
 			<span class="k">throw</span> <span class="k">new</span> <span class="n">NoSuchElementException</span><span class="p">(</span><span class="s">&quot;empty queue&quot;</span><span class="p">);</span>
 		<span class="k">else</span> <span class="p">{</span>
@@ -900,7 +900,7 @@ Z
 	<span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">T</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-		<span class="c1">// TODO 5</span>
+		
 		<span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">nn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
 		<span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">++</span><span class="p">;</span>
 		<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">head</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
@@ -911,12 +911,12 @@ Z
 	<span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="p">()</span> <span class="p">{</span>
-		<span class="c1">// TODO 4</span>
+		
 		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span>
 	<span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="p">{</span>
-		<span class="c1">// TODO 3</span>
+		
 		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">head</span> <span class="o">==</span> <span class="kc">null</span><span class="p">;</span>
 	<span class="p">}</span>
 
