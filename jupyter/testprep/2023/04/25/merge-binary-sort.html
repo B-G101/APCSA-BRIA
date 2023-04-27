@@ -291,7 +291,7 @@ Apples Bananas Cherry Dragonfruit Eggplant Fig Grape Orange Peach
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="n">String</span> <span class="n">arr</span><span class="o">[]</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// COMMENT A</span>
             <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
@@ -330,6 +330,149 @@ Apples Bananas Cherry Dragonfruit Eggplant Fig Grape Orange Peach
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MergeSort</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">original</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">center</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">original</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="n">original</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">center</span> <span class="o">=</span> <span class="n">original</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">center</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">left</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">original</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+			<span class="p">}</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">center</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">original</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">right</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">original</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+			<span class="p">}</span>
+			<span class="n">left</span> <span class="o">=</span> <span class="n">mergeSort</span><span class="p">(</span><span class="n">left</span><span class="p">);</span>
+			<span class="n">right</span> <span class="o">=</span> <span class="n">mergeSort</span><span class="p">(</span><span class="n">right</span><span class="p">);</span>
+			<span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span><span class="n">original</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">original</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="n">original</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kt">int</span> <span class="n">leftIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">rightIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">originalIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+		
+		<span class="k">while</span><span class="p">(</span><span class="n">leftIndex</span><span class="o">&lt;</span><span class="n">left</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">&amp;&amp;</span> <span class="n">rightIndex</span><span class="o">&lt;</span><span class="n">right</span><span class="p">.</span><span class="na">size</span><span class="p">())</span> <span class="p">{</span>
+			
+			<span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">leftIndex</span><span class="p">).</span><span class="na">compareTo</span><span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rightIndex</span><span class="p">))</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">original</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">originalIndex</span><span class="p">,</span> <span class="n">left</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">leftIndex</span><span class="p">));</span>
+				<span class="n">leftIndex</span><span class="o">++</span><span class="p">;</span>
+			<span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+				<span class="n">original</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">originalIndex</span><span class="p">,</span> <span class="n">right</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rightIndex</span><span class="p">));</span>
+				<span class="n">rightIndex</span><span class="o">++</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="n">originalIndex</span><span class="o">++</span><span class="p">;</span>
+		<span class="p">}</span>
+		
+		<span class="k">while</span><span class="p">(</span><span class="n">leftIndex</span><span class="o">&lt;</span><span class="n">left</span><span class="p">.</span><span class="na">size</span><span class="p">())</span> <span class="p">{</span>
+			<span class="n">original</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">originalIndex</span><span class="p">,</span> <span class="n">left</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">leftIndex</span><span class="p">));</span>
+			<span class="n">originalIndex</span><span class="o">++</span><span class="p">;</span>
+			<span class="n">leftIndex</span><span class="o">++</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">while</span><span class="p">(</span><span class="n">rightIndex</span><span class="o">&lt;</span><span class="n">right</span><span class="p">.</span><span class="na">size</span><span class="p">())</span> <span class="p">{</span>
+			<span class="n">original</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">originalIndex</span><span class="p">,</span> <span class="n">right</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rightIndex</span><span class="p">));</span>
+			<span class="n">originalIndex</span><span class="o">++</span><span class="p">;</span>
+			<span class="n">rightIndex</span><span class="o">++</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">47</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">84</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">27</span><span class="p">);</span>
+        <span class="n">numbers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">38</span><span class="p">);</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;bat&quot;</span><span class="p">);</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;rat&quot;</span><span class="p">);</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;sat&quot;</span><span class="p">);</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;fat&quot;</span><span class="p">);</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;splat&quot;</span><span class="p">);</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;hat&quot;</span><span class="p">);</span>
+        <span class="n">words</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;mat&quot;</span><span class="p">);</span>
+
+        <span class="n">MergeSort</span> <span class="n">test</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MergeSort</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Not Sorted List: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+
+        <span class="n">test</span><span class="p">.</span><span class="na">mergeSort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Merge Sorted List: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Not Sorted List: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
+
+        <span class="n">test</span><span class="p">.</span><span class="na">mergeSort</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Merge Sorted List: &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
+
+        
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">MergeSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Not Sorted List: 
+[4, 12, 9, 5, 6, 47, 84, 27, 38]
+Merge Sorted List: 
+[4, 5, 6, 9, 12, 27, 38, 47, 84]
+
+
+Not Sorted List: 
+[bat, rat, sat, fat, splat, hat, mat]
+Merge Sorted List: 
+[bat, fat, hat, mat, rat, sat, splat]</pre>
+</div>
+</div>
+
 </div>
 </div>
 
